@@ -2,7 +2,6 @@ const fs = require("fs");
 const Nightmare = require("nightmare");
 const axios = require("axios");
 const FormData = require("form-data");
-require("nightmare-inline-download")(Nightmare);
 const util = require("util");
 const execFile = util.promisify(require("child_process").execFile);
 
