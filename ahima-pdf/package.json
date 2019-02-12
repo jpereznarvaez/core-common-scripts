@@ -10,7 +10,7 @@
         "pdf",
         "license"
     ],
-    "author": "Hayder Espinoza",
+    "author": "ECHR",
     "license": "ISC",
     "dependencies": {
         "axios": "^0.18.0",
