@@ -1,0 +1,21 @@
+{
+    "name": "pdf-license",
+    "version": "1.0.0",
+    "description": "pdf-license",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "pdf",
+        "license"
+    ],
+    "author": "Hayder Espinoza",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.18.0",
+        "form-data": "^2.3.3",
+        "nightmare": "^3.0.1",
+        "nightmare-inline-download": "^0.2.2"
+    }
+}
