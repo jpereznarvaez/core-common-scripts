@@ -1,0 +1,24 @@
+{
+  "name": "oig_process",
+  "version": "0.0.1",
+  "description": "Project to update the value of EXCLUSIONS to the employees of employer SINAI HEALTH 60-684 - EVERCHECK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "casperjs": "^1.1.4",
+    "csv-parse": "2.0.0",
+    "csv-split-stream": "^1.0.2",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "knex": "^0.16.3",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
+    "nightmare": "^3.0.1",
+    "oracledb": "^3.0.1"
+  }
+}
