@@ -39,8 +39,9 @@ getLicenseInformation = async information => {
     let licenseNumber = information[2];
     let documentId = information[0];
     let fileName = information[3].replace(".JPG", ".pdf");
-    let filePath = `${__dirname}\\files\\pdf\\${fileName}`;
     let reportDate = information[4];
+    let expirationDate = information[5];
+    let filePath = `${__dirname}\\files\\pdf\\${fileName}`;
     try {
         if (!fs.existsSync(filePath)) {
             const nightmare = Nightmare({ show: false, waitTimeout: 5000 });
@@ -53,13 +54,24 @@ getLicenseInformation = async information => {
                 .type("#phContent_txtCredentialNum", licenseNumber)
                 .click("#phContent_btnSubmit")
                 .wait(2000)
-                .evaluate(licenseNumber => {
-                    if (!document.querySelector("#phContent_lblNoResults")) {
-                        return document.querySelector(
-                            "#ctl00_phContent_SearchResultsRadGrid_ctl00 > tbody > tr"
-                        ).innerHTML;
-                    }
-                }, licenseNumber)
+                .evaluate(
+                    (licenseNumber, expirationDate) => {
+                        if (
+                            !document.querySelector("#phContent_lblNoResults")
+                        ) {
+                            let information = document.querySelector(
+                                "#ctl00_phContent_SearchResultsRadGrid_ctl00 > tbody > tr"
+                            );
+                            if (expirationDate)
+                                information.querySelector(
+                                    "td:nth-child(5)"
+                                ).innerText = expirationDate;
+                            return information.innerHTML;
+                        }
+                    },
+                    licenseNumber,
+                    expirationDate
+                )
                 .end()
                 .then(async licenseData => {
                     if (licenseData) {
@@ -159,12 +171,17 @@ addLogMessage = (data, type = 0, isOk = false) => {
     const { lastName, licenseNumber, msg } = data;
     switch (type) {
         case 0:
-            fs.appendFile(fileLog, `${JSON.stringify(data)}\n`);
+            fs.appendFile(fileLog, `${JSON.stringify(data)}\n`, err => {
+                if (err) throw err;
+            });
             break;
         case 1:
             fs.appendFile(
                 fileLog,
-                `${lastName},${licenseNumber},${isOk},${now},${msg}${"\n"}`
+                `${lastName},${licenseNumber},${isOk},${now},${msg}${"\n"}`,
+                err => {
+                    if (err) throw err;
+                }
             );
             break;
         default:
@@ -173,8 +190,12 @@ addLogMessage = (data, type = 0, isOk = false) => {
 };
 
 addSql = (documentId, token) => {
-    const sql = `UPDATE document_index SET cd_token = ${token} WHERE id_document = "${documentId}";\n`;
-    fs.appendFile(scriptSql, sql);
+    token = token.replace('"', "'");
+    const sql = `UPDATE document_index SET cd_token = ${token} WHERE id_document = '${documentId}';\n`;
+    fs.appendFile(scriptSql, sql, err => {
+        if (err) throw err;
+        console.log(`script updated ${documentId}: ${token}`);
+    });
 };
 
 init();
