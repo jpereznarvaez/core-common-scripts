@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC ""-//W3C//DTD HTML 4.01//EN"">
+<html>
+  <head>
+    <style type="text/css">
+      body {
+        font-size: 14pt;
+        font-family: 'Calibri';
+        font-style: normal;
+        background-color: #fafafa;
+      }
+      div.main {
+        background-color: #ffffff;
+        position: relative;
+        width: 600px;
+        margin-top: 35px;
+        margin-left: 35px;
+      }
+      div.heading {
+        padding: 18px 30px;
+        border: 2px solid #e9e7e7;
+        border-bottom: 0px;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+      }
+      div.content {
+        padding: 20px 30px;
+        border: 2px solid;
+        border-color: #e9e7e7;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+      }
+      div img {
+        vertical-align: center;
+        float: left;
+      }
+      div img.FL {
+        width: 80px;
+        height: auto;
+      }
+      div img.TN {
+        width: auto;
+        height: 100px;
+      }
+      div img.GA {
+        width: auto;
+        height: 80px;
+      }
+      div img.AK {
+        width: auto;
+        height: 100px;
+      }
+      div img.WA {
+        width: auto;
+        height: 75px;
+        padding-top: 12px;
+        padding-right: 10px;
+      }
+      div img.WY {
+        width: auto;
+        height: 75px;
+        padding-top: 12px;
+        padding-right: 10px;
+      }
+      div img.NV {
+        width: auto;
+        height: 75px;
+        padding-top: 12px;
+        padding-right: 10px;
+      }
+      div img.ARRTService {
+        width: auto;
+        height: 100px;
+      }
+      div img.NURSYS {
+        width: auto;
+        height: 70px;
+        padding-top: 12px;
+        padding-right: 10px;
+      }
+      h1 {
+        color: #666666;
+        font-size: 22pt;
+        line-height: 15px;
+      }
+      h2 {
+        color: #666666;
+        font-size: 14pt;
+        text-transform: uppercase;
+        line-height: 18px;
+      }
+      p {
+        font-size: 14pt;
+        line-height: 20px;
+        color: #666666;
+      }
+      span.type {
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #666666;
+      }
+      footer {
+        color: #3f3f3f;
+        font-size: 14pt;
+        font-style: italic;
+        font-weight: 500;
+        margin-top: 15px;
+        margin-left: 35px;
+      }
+      footer p {
+        font-size: 14pt;
+        color: #666666;
+      }
+      footer p span {
+        margin-left: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="heading">
+        <img alt="" src="./ncsbn-nursys.png" class="[CD_STATE]" />
+        <h1>Primary Source Verification</h1>
+        <h2>NATIONAL COUNCIL OF STATE BOARD OF NURSING / NURSYS</h2>
+      </div>
+      <div class="content">
+        <p>
+          <b>STATE</b>
+          <span id="CD_STATE"></span>
+        </p>
+        <p>
+          <b>LICENSE TYPE</b>
+          <span id="CD_PROFESSION"></span>
+        </p>
+        <p>
+          <b>LICENSE NO.</b>
+          <span
+            style="text-transform: uppercase;"
+            id="DS_LICENSE_NUMBER"
+          ></span>
+        </p>
+        <p>
+          <b>NAME ON LICENSE</b>
+          <span style="text-transform: uppercase;" id="FULL_NAME"></span>
+        </p>
+        <p>
+          <b>ACTIVE</b>
+          <span
+            style="text-transform: uppercase;"
+            id="CD_NURSYS_LIC_ACTIVE"
+          ></span>
+        </p>
+        <p>
+          <b>LICENSE STATUS</b>
+          <span id="CD_LICENSE_STATUS"></span>
+        </p>
+        <p>
+          <b>COMPACT STATUS</b>
+          <span id="CD_NURSYS_COMPACT_STATUS"></span>
+        </p>
+        <p>
+          <b>ORIGINAL ISSUE DATE</b>
+          <span id="DT_ORIG_ISSUE"></span>
+        </p>
+        <p>
+          <b>EXPIRATION DATE</b>
+          <span id="DT_STATUS"></span>
+        </p>
+      </div>
+    </div>
+    <footer>
+      <p>
+        <img alt="" src="./ec-arrow.png" width="20px" />
+        &nbsp;EverCheck Primary Source Verification
+      </p>
+      <p>
+        <span id="block"
+          >Verification Date
+          <b>
+            <span id="DT_ADDED"></span>
+          </b>
+        </span>
+      </p>
+    </footer>
+  </body>
+</html>
