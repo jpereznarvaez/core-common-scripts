@@ -1,0 +1,56 @@
+{
+  "badScreenshots": [
+    {
+      "ID_EMPLOYEE_LIC_HISTORY": 91864829,
+      "CD_TYPE": "LIC_STATUS_CHG",
+      "DS_LICENSE_NUMBER": "RN-88788",
+      "CD_STATE": "NM",
+      "DS_STATE": "New Mexico",
+      "CD_PROFESSION": "RN",
+      "NM_PROFESSION": "Registered Nurse New Mexico",
+      "CD_TOKEN": "09c8b43c-4282-41a9-861c-87abd1873052",
+      "DT_ADDED": "01-MAR-19 02:17:00",
+      "DS_FILENAME": "NM_RN_RN-88788_03012019.JPG",
+      "SIZE": "13124"
+    },
+    {
+      "ID_EMPLOYEE_LIC_HISTORY": 91936649,
+      "CD_TYPE": "MONTHLY_STATUS_DATE",
+      "DS_LICENSE_NUMBER": "RN-88484",
+      "CD_STATE": "NM",
+      "DS_STATE": "New Mexico",
+      "CD_PROFESSION": "RN",
+      "NM_PROFESSION": "Registered Nurse New Mexico",
+      "CD_TOKEN": "1226cf3b-db5c-479b-bd90-8d2b0fa633e4",
+      "DT_ADDED": "06-MAR-19 02:24:17",
+      "DS_FILENAME": "NM_RN_RN-88484_03062019.JPG",
+      "SIZE": "13124"
+    },
+    {
+      "ID_EMPLOYEE_LIC_HISTORY": 91937258,
+      "CD_TYPE": "MONTHLY_STATUS_DATE",
+      "DS_LICENSE_NUMBER": "RN-88788",
+      "CD_STATE": "NM",
+      "DS_STATE": "New Mexico",
+      "CD_PROFESSION": "RN",
+      "NM_PROFESSION": "Registered Nurse New Mexico",
+      "CD_TOKEN": "a864a163-3856-44e2-98e9-bc7c640dc139",
+      "DT_ADDED": "06-MAR-19 02:29:39",
+      "DS_FILENAME": "NM_RN_RN-88788_03062019.JPG",
+      "SIZE": "13124"
+    },
+    {
+      "ID_EMPLOYEE_LIC_HISTORY": 94931207,
+      "CD_TYPE": "LIC_INIT_STATUS",
+      "DS_LICENSE_NUMBER": "RN196720",
+      "CD_STATE": "AZ",
+      "DS_STATE": "Arizona",
+      "CD_PROFESSION": "RN",
+      "NM_PROFESSION": "Registered Nurse Arizona",
+      "CD_TOKEN": "b3ef9b7b-5b6e-4dd6-abae-c17976fe8552",
+      "DT_ADDED": "29-MAR-19 02:49:54",
+      "DS_FILENAME": "AZ_RN_RN196720_03292019.JPG",
+      "SIZE": "13124"
+    }
+  ]
+}
