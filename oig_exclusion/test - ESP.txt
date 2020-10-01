@@ -1,0 +1,17 @@
+Para ejecutar este proceso:
+
+Por favor configurar los datos:
+	fecha del reporte
+	fecha en que los employee fueron agregados para ser verificados
+	datos del reporte, si es hasta un mes en particular
+
+Despues de realizar el proceso de configuracion, la aplicacion mostrara un total de registros a insertar, tiene dos minutos para cancelar o esperar para guardar los registros en base de datos
+
+Puede usar
+	solo un archivo: index.js, ubicado en la carpeta raiz
+	el archivo index, ubicado en la carpeta raiz
+	
+
+	
+
+Hola, Mundo!
