@@ -1,0 +1,15 @@
+{
+  "name": "scraping-stress-tests",
+  "version": "1.0.0",
+  "description": "use this script to know the correct concurrency",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LICENSES-TEAM",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "dotenv": "^8.2.0"
+  }
+}
