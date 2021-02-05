@@ -11,7 +11,10 @@ module.exports.removeInactiveLicensesProcess = async () => {
     await postToVerificationService(SERVICE_URL);
 
     console.info(`Notifying in Slack Channel`);
-    await postToSlack(SLACK_WEBHOOK_URL, 'The Inactive licenses were removed');
+    await postToSlack(
+      SLACK_WEBHOOK_URL,
+      'The Inactive licenses were removed :tamo-activo: :andamo-ruleta:'
+    );
   } catch (error) {
     console.error('Error LV Status Checker process: ', error);
   } finally {
