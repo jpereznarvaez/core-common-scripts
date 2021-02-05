@@ -39,3 +39,6 @@ package-lock.json
 
 # MacOS files
 .DS_Store
+
+# files of env variables
+.env
