@@ -1,5 +1,4 @@
 'use strict';
-const axios = require('axios');
 const { SERVICE_URL, SLACK_WEBHOOK_URL } = process.env;
 const { postToVerificationService, postToSlack } = require('./functions');
 
@@ -16,7 +15,7 @@ module.exports.removeInactiveLicensesProcess = async () => {
       'The Inactive licenses were removed :tamo-activo: :andamo-ruleta:'
     );
   } catch (error) {
-    console.error('Error LV Status Checker process: ', error);
+    console.error('Error [removeInactiveLicensesProcess] process: ', error);
   } finally {
     console.info('Ending...!');
   }

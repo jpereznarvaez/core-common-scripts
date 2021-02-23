@@ -1,0 +1,16 @@
+{
+  "name": "remove-inactive-licenses",
+  "version": "1.0.0",
+  "description": "Remove inactive licenses from the queue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LV Team",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cron": "^1.8.2",
+    "dotenv": "^8.2.0"
+  }
+}
