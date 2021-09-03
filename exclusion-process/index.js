@@ -62,7 +62,7 @@ async function exclusionProcess() {
       return `machine(${machine}) --> ${message} ✅\n`;
     }, '');
 
-    infoText = `😎 [runOldExclusionProcessJob] was successfully executed in the following machines:\n${messageText}`;
+    infoText = `😎 [runOldExclusionProcessJob] was successfully executed in the following machines:\n${infoText}`;
 
     await postToSlack(SLACK_WEBHOOK_URL, infoText);
   }
@@ -73,7 +73,7 @@ async function exclusionProcess() {
       return `machine(${machine}):${message} 👀\n`;
     }, '');
 
-    errorText = `💥 [runOldExclusionProcessJob] We had errors in the following machines:\n${messageText}`;
+    errorText = `💥 [runOldExclusionProcessJob] We had errors in the following machines:\n${errorText}`;
 
     await postToSlack(SLACK_WEBHOOK_URL, errorText);
   }
