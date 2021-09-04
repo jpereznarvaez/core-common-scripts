@@ -45,32 +45,33 @@ const postToSlack = async (webhookURL, message) => {
 };
 
 async function exclusionProcess() {
-  let info = [],
+  let success = [],
     errors = [];
   for (const { machineName, machineNumber } of exclusionMachines) {
     try {
-      const exclusionCommand = `EXCLUSIONS 0 ${machineNumber} "${EXCLUSION_TYPE}" "${EXCLUSION_DATE}" True`;
+      const exclusionCommand = `EXCLUSIONS 0 ${machineNumber} "${EXCLUSION_TYPE}" ${EXCLUSION_DATE} True`;
       await runExclusion(machineName, exclusionCommand);
-      info.push({ machine: machineName, message: exclusionCommand });
+      success.push({ machine: machineName, message: exclusionCommand });
     } catch (error) {
       errors.push({ machine: machineName, message: error.message });
     }
   }
-  if (info.length) {
-    let infoText = info.reduce((prev, data) => {
-      const { machine, message } = data;
-      return `machine(${machine}) --> ${message} ✅\n`;
+
+  if (success.length) {
+    let successText = success.reduce((prev, info) => {
+      const { machine, message } = info;
+      return `${prev} machine(${machine}) --> ${message} ✅\n`;
     }, '');
 
-    infoText = `😎 [runOldExclusionProcessJob] was successfully executed in the following machines:\n${infoText}`;
+    successText = `😎 [runOldExclusionProcessJob] was successfully executed in the following machines:\n${successText}`;
 
-    await postToSlack(SLACK_WEBHOOK_URL, infoText);
+    await postToSlack(SLACK_WEBHOOK_URL, successText);
   }
 
   if (errors.length) {
     let errorText = errors.reduce((prev, data) => {
       const { machine, message } = data;
-      return `machine(${machine}):${message} 👀\n`;
+      return `${prev} machine(${machine}):${message} 👀\n`;
     }, '');
 
     errorText = `💥 [runOldExclusionProcessJob] We had errors in the following machines:\n${errorText}`;
