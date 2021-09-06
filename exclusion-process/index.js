@@ -19,6 +19,8 @@ const exclusionMachines = [
   { machineName: 'five', machineNumber: 5 }
 ];
 
+const reportTypes = ['OIG', 'SAM', 'TX', 'IL'];
+
 function runExclusion(machineName, exclusionCommand) {
   return axios.post(
     `${serviceUrl}${machineName}/lv-task/run`,
@@ -49,9 +51,17 @@ async function exclusionProcess() {
     errors = [];
   for (const { machineName, machineNumber } of exclusionMachines) {
     try {
-      const exclusionCommand = `EXCLUSIONS 0 ${machineNumber} "${EXCLUSION_TYPE}" ${EXCLUSION_DATE} True`;
-      await runExclusion(machineName, exclusionCommand);
-      success.push({ machine: machineName, message: exclusionCommand });
+      if (!EXCLUSION_TYPE) {
+        for (const reportType of reportTypes) {
+          const exclusionCommand = `EXCLUSIONS 0 ${machineNumber} "${reportType}" ${EXCLUSION_DATE} True`;
+          await runExclusion(machineName, exclusionCommand);
+          success.push({ machine: machineName, message: exclusionCommand });
+        }
+      } else {
+        const exclusionCommand = `EXCLUSIONS 0 ${machineNumber} "${EXCLUSION_TYPE}" ${EXCLUSION_DATE} True`;
+        await runExclusion(machineName, exclusionCommand);
+        success.push({ machine: machineName, message: exclusionCommand });
+      }
     } catch (error) {
       errors.push({ machine: machineName, message: error.message });
     }
