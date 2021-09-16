@@ -53,12 +53,12 @@ async function exclusionProcess() {
     try {
       if (!EXCLUSION_TYPE) {
         for (const reportType of reportTypes) {
-          const exclusionCommand = `EXCLUSIONS 0 ${machineNumber} "${reportType}" ${EXCLUSION_DATE} True`;
+          const exclusionCommand = `EXCLUSIONS 0 ${machineNumber} ${reportType} ${EXCLUSION_DATE} True`;
           await runExclusion(machineName, exclusionCommand);
           success.push({ machine: machineName, message: exclusionCommand });
         }
       } else {
-        const exclusionCommand = `EXCLUSIONS 0 ${machineNumber} "${EXCLUSION_TYPE}" ${EXCLUSION_DATE} True`;
+        const exclusionCommand = `EXCLUSIONS 0 ${machineNumber} ${EXCLUSION_TYPE} ${EXCLUSION_DATE} True`;
         await runExclusion(machineName, exclusionCommand);
         success.push({ machine: machineName, message: exclusionCommand });
       }
